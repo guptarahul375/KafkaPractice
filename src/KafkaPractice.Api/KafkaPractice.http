@@ -1,0 +1,12 @@
+@KafkaPractice_HostAddress = http://localhost:5282
+
+
+POST {{KafkaPractice_HostAddress}}/messages
+Content-Type: application/json
+
+{
+  "message": "Hello from the Kafka producer",
+  "key": "sample-key"
+}
+
+###
