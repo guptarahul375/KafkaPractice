@@ -7,10 +7,10 @@ ENV ASPNETCORE_URLS=http://+:5282
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG configuration=Release
 WORKDIR /src
-COPY ["src\KafkaPractice.Api\KafkaPractice.Api.csproj", "src/KafkaPractice.Api/"]
-RUN dotnet restore "src/KafkaPractice.Api/KafkaPractice.Api.csproj"
+COPY ["KafkaPractice.Api.csproj", "./"]
+RUN dotnet restore "KafkaPractice.Api.csproj"
 COPY . .
-WORKDIR "/src/src/KafkaPractice.Api"
+WORKDIR /src
 RUN dotnet build "KafkaPractice.Api.csproj" -c $configuration -o /app/build
 
 FROM build AS publish

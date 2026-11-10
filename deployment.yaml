@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafkapractice.api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kafkapractice
+  template:
+    metadata:
+      labels:
+        app: kafkapractice
+    spec:
+      containers:
+      - name: kafkapractice
+        image: kafkapractice-api:v1
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
