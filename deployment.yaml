@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: kafkapractice
-        image: kafkapractice-api:v1
+        image: kafkapractice.api:latest
         imagePullPolicy: Never
         ports:
         - containerPort: 8080
